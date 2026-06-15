@@ -14,6 +14,8 @@ export default function DigitalGlobe({ className }: DigitalGlobeProps) {
   const el = useRef<HTMLDivElement | null>(null)
 
   useIsomorphicLayoutEffect(() => {
+    if (typeof window === "undefined") return
+
     gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.timeline({
       scrollTrigger: {
@@ -32,7 +34,7 @@ export default function DigitalGlobe({ className }: DigitalGlobeProps) {
   return (
     <div
       className={cn(
-        "max-md h-24 w-24 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800",
+        "hidden max-md:h-16 max-md:w-16 md:h-24 md:w-24 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800",
         className
       )}
       ref={el}

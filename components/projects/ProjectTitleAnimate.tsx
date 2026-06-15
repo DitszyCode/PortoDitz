@@ -38,12 +38,12 @@ export default function ProjectTitleAnimate() {
       initial="hidden"
       aria-hidden="true"
       variants={projectTitleAnimation}
-      className="mb-10 flex w-full items-center justify-between md:mb-16"
+      className="mb-6 flex w-full items-center justify-between sm:mb-8 md:mb-10 lg:mb-10"
     >
-      <h2 className="text-4xl font-bold md:text-5xl lg:text-7xl">
+      <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-7xl">
         Recent Projects
       </h2>
-      <Sparkles className="h-9 w-9 md:h-11 md:w-11 lg:h-16 lg:w-16" />
+      <Sparkles className="h-6 w-6 text-foreground/50 sm:h-8 sm:w-8 md:h-11 md:w-11 lg:h-16 lg:w-16" />
     </motion.div>
   )
 }

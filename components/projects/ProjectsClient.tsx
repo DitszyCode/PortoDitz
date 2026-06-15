@@ -34,14 +34,13 @@ export default function ProjectsClient() {
   const router = useRouter()
 
   return (
-    <main className="mx-auto flex w-[90%] flex-col items-center justify-center lg:max-w-[1212.8px] mt-24 pb-24">
-      
+    <main className="mx-auto mt-16 flex w-[92%] flex-col items-center justify-center pb-16 sm:mt-20 md:mt-24 md:pb-20 lg:max-w-[1212.8px] lg:pb-24">
       {/* Back Button */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4 }}
-        className="w-full mb-12"
+        className="mb-8 w-full sm:mb-10 md:mb-12"
       >
         <MagneticEffect>
           <Button
@@ -61,23 +60,23 @@ export default function ProjectsClient() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="mb-16 text-center"
+        className="mb-10 text-center sm:mb-12 md:mb-16"
       >
-        <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl">
+        <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-7xl">
           All{" "}
           <span className="text-foreground/30">Projects</span>
         </h1>
-        <p className="mt-4 text-sm font-semibold text-foreground/50">
+        <p className="mt-2 text-xs font-semibold text-foreground/50 sm:mt-3 sm:text-sm md:mt-4 md:text-base">
           {projects.length} projects in total
         </p>
       </motion.div>
 
-      {/* Project Grid */}
+      {/* Project Grid - 1 column like original */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid w-full grid-cols-1 gap-6 lg:grid-cols-2"
+        className="grid w-full grid-cols-1 gap-4 sm:gap-5 md:grid-cols-1 md:gap-6"
       >
         {projects.map((project, index) => (
           <motion.div key={index} variants={itemVariants}>
@@ -92,7 +91,6 @@ export default function ProjectsClient() {
           </motion.div>
         ))}
       </motion.div>
-
     </main>
   )
 }

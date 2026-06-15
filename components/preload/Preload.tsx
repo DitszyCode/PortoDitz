@@ -35,10 +35,12 @@ export default function Preload({ endedLoading }: PreloadProps) {
       )}
     >
       <div className="relative flex flex-col items-center justify-center gap-2">
-        {/* Logo/Globe */}
-        <Logo />
-        
-        {/* TEKS DIPERBESAR LAGI */}
+        {/* Logo/Globe - smaller on mobile */}
+        <div className="scale-50 sm:scale-75 md:scale-100">
+          <Logo />
+        </div>
+
+        {/* TEKS - Bigger on mobile */}
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -52,19 +54,19 @@ export default function Preload({ endedLoading }: PreloadProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="text-center text-2xl font-black tracking-wider text-white sm:text-3xl md:text-4xl lg:text-5xl"
+            className="text-center text-4xl font-black tracking-wider text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             ADITYA
           </motion.h1>
         </div>
       </div>
-      
-      {/* Counter persentase */}
+
+      {/* Counter persentase - Bigger on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="text-center font-mono text-2xl font-semibold text-white/80 sm:text-3xl md:text-4xl"
+        className="text-center font-mono text-4xl font-semibold text-white/80 sm:text-5xl md:text-6xl lg:text-7xl"
         ref={counterRef}
       >
         0%

@@ -1,7 +1,12 @@
+import dynamic from "next/dynamic"
 import { useAnimation, useInView, motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { useEffect, useRef } from "react"
-import GitHubCalendar from "react-github-calendar"
+
+const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
+  ssr: false,
+  loading: () => <div className="h-32 w-full animate-pulse rounded-xl bg-zinc-200 dark:bg-zinc-800" />,
+})
 
 export default function GithubGraph() {
   const { resolvedTheme } = useTheme()
